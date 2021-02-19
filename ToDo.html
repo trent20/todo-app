@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>TO-DO App</title>
+</head>
+<body>
+  <div id="container">  
+    <header>TO DO APP</header>
+    <div> 
+      <span id="new-to-do"><input id="toDo" required placeholder="Enter Task To Do Here..."><button id="add">New To-Do</button></span>
+    </div>
+    <br>
+    <div id="items">
+      <ul id="ul">
+      </ul> 
+    </div>
+  </div>
+  <script>
+    let btn = document.getElementById('add');
+    let todo = document.getElementById('toDo');
+    let list = document.querySelector('ul');
+    
+    function newTodo(){
+      let newItem = document.createElement('li');
+      let close = document.createElement('span');
+      var item = document.createElement('span');
+      if(todo.value ===''){
+        return
+      }else{
+        close.className = 'close'
+        list.appendChild(newItem)
+        newItem.appendChild(item)
+        item.innerText=todo.value
+        item.className = 'todoItem'
+        todo.value = ''
+        newItem.appendChild(close)
+        close.innerHTML = '&times;'
+      }
+    }
+    btn.addEventListener('click',newTodo)
+
+    list.addEventListener('click', done)
+    function done(event){
+      if (event.target.className === 'todoItem'){
+        event.target.classList.add('strike');
+      } else if(event.target.className === 'todoItem strike') {
+        event.target.classList.remove('strike')
+      } else {
+        return
+      }
+    }
+    btn.addEventListener('click',function(event){
+      if(event.target.id === 'add'){
+        document.getElementById('items').classList.add('items')
+      }
+    })
+    function del(event){
+      if(event.target.className === 'close'){
+        this.parentElement.remove()
+      }
+    }
+  </script> 
+</body>
+</html>

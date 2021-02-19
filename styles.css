@@ -1,0 +1,99 @@
+@import url('https://fonts.googleapis.com/css2?family=Reggae+One&display=swap');
+*{
+    box-sizing: border-box;
+}
+
+li {
+    width: 100%;
+    background-color: beige;
+    display: flex;
+    justify-content: space-between;
+    height: 35px;
+    align-items: center;
+    margin: auto;
+}
+
+li:nth-child(odd){
+    width: 100%;
+    background-color: burlywood;
+}
+
+header{
+    font-size: 50px;
+    justify-self: center;
+    margin-left: 10px;
+    margin-bottom: 50px;
+    font-family:'Reggae One', cursive;
+}
+
+#container{
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    width:800px;
+    border: wheat 1px solid;
+    height: 600px;
+}
+
+#new-to-do{
+    display: flex;
+    width: 80%;
+    align-items: center;
+    justify-content: space-around;
+    margin: auto;
+}
+
+#toDo{
+    height: 30px;
+    width: 75%;
+}
+
+#add{
+    height: 30px;
+    display: flex;
+    align-self: flex-end;
+    text-align: center;
+}
+
+.strike{
+    text-decoration: line-through;
+}
+
+#items span{
+    display:flex;
+    cursor: pointer;
+}
+
+#ul{
+    width: 90%;
+    padding: 0px;    
+}
+
+.items{
+    display: flex;
+    width: 90%;
+    align-self: center;
+    border: lightskyblue 1px solid;
+    justify-content: center;
+}
+
+.close{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    height: 100%;
+    font-size: 25px;
+    margin-right: 0px;
+    font-weight: bold;
+    color:red;   
+}
+
+.close:hover{
+    background-color: red;
+    color: white;
+}
+
+.todoItem{
+    margin-left: 10px;
+}
