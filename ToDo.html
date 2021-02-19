@@ -10,8 +10,8 @@
 <body>
   <div id="container">  
     <header>TO DO APP</header>
-    <div> 
-      <span id="new-to-do"><input id="toDo" required placeholder="Enter Task To Do Here..."><button id="add">New To-Do</button></span>
+    <div id="new-to-do">
+        <input id="toDo" required placeholder="Enter Task To Do Here..."><button id="add">New To-Do</button>
     </div>
     <br>
     <div id="items">
@@ -27,7 +27,7 @@
     function newTodo(){
       let newItem = document.createElement('li');
       let close = document.createElement('span');
-      var item = document.createElement('span');
+      let item = document.createElement('span');
       if(todo.value ===''){
         return
       }else{
@@ -40,6 +40,31 @@
         newItem.appendChild(close)
         close.innerHTML = '&times;'
       }
+      let items = document.getElementsByTagName('li')
+      let itemsArr = Array.from(items)
+      for(let i=0; i<itemsArr.length; i++){
+        let item = itemsArr[i]
+        item.id = i+1
+      }
+      let spans = document.getElementsByTagName('span')
+      let spansArr = Array.from(spans)
+      for(let i=0; i<spansArr.length; i++){
+        let span = spansArr[i]
+        span.id = i+1
+        span.onclick = function(){
+          this.parentElement.remove()
+        }
+      }
+      let storage = localStorage;
+      let iden = newItem.id
+      let content = item.innerText
+      let lItem = JSON.stringify(content)
+      storage.setItem(iden, lItem);
+      for (let i=0; i<itemsArr.length; i++){
+        let id = i+1;
+        let oldItem = JSON.parse(storage.getItem(id));
+        item.innerText = id + '.' + ' ' + oldItem
+      }
     }
     btn.addEventListener('click',newTodo)
 
@@ -49,7 +74,7 @@
         event.target.classList.add('strike');
       } else if(event.target.className === 'todoItem strike') {
         event.target.classList.remove('strike')
-      } else {
+      }else {
         return
       }
     }
@@ -58,11 +83,8 @@
         document.getElementById('items').classList.add('items')
       }
     })
-    function del(event){
-      if(event.target.className === 'close'){
-        this.parentElement.remove()
-      }
-    }
+
+
   </script> 
 </body>
 </html>

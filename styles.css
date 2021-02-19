@@ -31,27 +31,32 @@ header{
     display: flex;
     flex-direction: column;
     width:800px;
-    border: wheat 1px solid;
+    border: wheat 3px solid;
     height: 600px;
+    background-color: lightgray;
 }
 
 #new-to-do{
     display: flex;
     width: 80%;
-    align-items: center;
     justify-content: space-around;
+    position: absolute;
     margin: auto;
+    margin-top: 100px;
+    height: 40px;
+    align-self: center;
 }
 
 #toDo{
     height: 30px;
     width: 75%;
+    align-self: center;
 }
 
 #add{
     height: 30px;
     display: flex;
-    align-self: flex-end;
+    align-self: center;
     text-align: center;
 }
 
@@ -66,19 +71,23 @@ header{
 
 #ul{
     width: 90%;
-    padding: 0px;    
+    padding: 0px;
+}
+
+.scroll{
+    overflow: scroll;
 }
 
 .items{
     display: flex;
     width: 90%;
     align-self: center;
-    border: lightskyblue 1px solid;
+    border: cornsilk 2px solid;
     justify-content: center;
+    margin-top: 50px;
 }
 
 .close{
-    display: flex;
     align-items: center;
     justify-content: center;
     width: 30px;
