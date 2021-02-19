@@ -9,7 +9,10 @@
 </head>
 <body>
   <div id="container">  
-    <header>TO DO APP</header>
+    <div id="head">
+      <header>TO DO APP</header>
+      <img src="image.jpg" alt="todo logo">
+    </div>
     <div id="new-to-do">
         <input id="toDo" required placeholder="Enter Task To Do Here..."><button id="add">New To-Do</button>
     </div>
@@ -52,7 +55,9 @@
         let span = spansArr[i]
         span.id = i+1
         span.onclick = function(){
-          this.parentElement.remove()
+          if(span.id%2===0){
+            this.parentElement.remove()
+          } 
         }
       }
       let storage = localStorage;
@@ -82,8 +87,7 @@
       if(event.target.id === 'add'){
         document.getElementById('items').classList.add('items')
       }
-    })
-
+    }) 
 
   </script> 
 </body>

@@ -11,11 +11,12 @@ li {
     height: 35px;
     align-items: center;
     margin: auto;
+    font-family: 'Courier New', Courier, monospace;
 }
 
 li:nth-child(odd){
     width: 100%;
-    background-color: burlywood;
+    background-color: rgb(190, 172, 66);
 }
 
 header{
@@ -31,18 +32,15 @@ header{
     display: flex;
     flex-direction: column;
     width:800px;
-    border: wheat 3px solid;
+    border: rgb(235, 177, 71) 5px solid;
     height: 600px;
-    background-color: lightgray;
+    background-color: rgb(221, 221, 160);
 }
 
 #new-to-do{
     display: flex;
     width: 80%;
-    justify-content: space-around;
-    position: absolute;
-    margin: auto;
-    margin-top: 100px;
+    justify-content: center;
     height: 40px;
     align-self: center;
 }
@@ -51,6 +49,9 @@ header{
     height: 30px;
     width: 75%;
     align-self: center;
+    border: darkred solid 1px;
+    border-radius: 4px;
+    margin-right: 10px;
 }
 
 #add{
@@ -58,6 +59,11 @@ header{
     display: flex;
     align-self: center;
     text-align: center;
+    border: indigo solid 2px;
+    border-radius: 4px;
+    background-color: honeydew;
+    font-size: 18px;
+    color: green;
 }
 
 .strike{
@@ -82,9 +88,8 @@ header{
     display: flex;
     width: 90%;
     align-self: center;
-    border: cornsilk 2px solid;
     justify-content: center;
-    margin-top: 50px;
+    margin-top: 20px;
 }
 
 .close{
@@ -105,4 +110,14 @@ header{
 
 .todoItem{
     margin-left: 10px;
+}
+
+img{
+    height: 100px;
+    width: auto;
+}
+
+#head{
+    display: flex;
+    justify-content: space-between;
 }
